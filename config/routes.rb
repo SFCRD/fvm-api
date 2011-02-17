@@ -1,4 +1,8 @@
 FvmApi::Application.routes.draw do
+  get "builds/index"
+
+  get "builds/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
