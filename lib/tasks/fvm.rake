@@ -8,17 +8,19 @@ namespace :fvm do
     worker = BuildWorker.new
 
     config = YAML.load_file( Rails.root.join( 'config/flex_sdk_pages.yml' ) )
+
+    require 'pp'
     
+
     config.each do |sdk, props|
       
-      # puts sdk
-      # puts props[ 'url' ]
+      builds = worker.parse sdk, props[ 'url' ]
       
-      result = worker.parse sdk, props[ 'url' ]
-      
-      require 'pp'
-      
-      pp result
+      builds.select { |build| build[ :url ].any? }.each do |build|
+        
+        # Build.create( build )
+        
+      end
       
     end
 
