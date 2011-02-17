@@ -14,9 +14,11 @@ namespace :fvm do
       # puts sdk
       # puts props[ 'url' ]
       
-      result = worker.parse props[ 'url' ]
+      result = worker.parse sdk, props[ 'url' ]
       
-      puts result
+      require 'pp'
+      
+      pp result
       
     end
 

@@ -1,36 +1,32 @@
 class BuildWorker
   
-  def parse( url )
+  def parse( sdk, url )
     
     page = browser.get url
     
     html = page.search 'body'
     
     data = parser.parse html
-    # puts html
-    # puts html.class
-    
-    # 
-    # puts page.methods - Object.methods
-    
-    # puts Mechanize::Page.instance_methods - Object.instance_methods
-  
-    # require 'pp'
-    
-    
-    # pp data
-    
-    # { :version => '', :sdk => '', :milestone => '', :description => '', :date => Date.new, :url => }
-    
-    # puts data.to_yaml
+
+    mapper.map flatten( sdk, data )
     
   end
   
-  def flatten_tables( tables )
-    tables.map { |name, rows| rows }.flatten
+  def flatten( sdk, tables )
+    tables.map { |name, rows| 
+      rows.map { |row| 
+        row[ 'Description' ] = name
+        row[ 'SDK' ] = sdk
+        row
+      }
+    }.flatten
   end
   
   protected
+  
+  def mapper
+    @mapper ||= BuildMapper.new
+  end
   
   def browser
     @browser ||= Mechanize.new
