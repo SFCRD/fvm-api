@@ -16,11 +16,7 @@ namespace :fvm do
       
       builds = worker.parse sdk, props[ 'url' ]
       
-      builds.select { |build| build[ :url ].any? }.each do |build|
-        
-        # Build.create( build )
-        
-      end
+      Build.create builds.select { |build| build[ :url ].any? }
       
     end
 

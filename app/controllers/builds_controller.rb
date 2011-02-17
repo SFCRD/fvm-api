@@ -7,6 +7,8 @@ class BuildsController < ApplicationController
   end
 
   def show
+    @builds = Build.where( :sdk => params[ :id ] )
+    respond_with @builds
   end
 
 end
