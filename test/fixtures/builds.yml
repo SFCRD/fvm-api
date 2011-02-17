@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  version: MyString
+  sdk: MyString
+  milestone: MyString
+  description: MyString
+  date: 2011-02-17
+  url: MyString
+
+two:
+  version: MyString
+  sdk: MyString
+  milestone: MyString
+  description: MyString
+  date: 2011-02-17
+  url: MyString
