@@ -1,14 +1,17 @@
 class BuildsController < ApplicationController
-  respond_to :json
+  respond_to :json, :xml
   
   def index
-    @builds = Build.all
+    @builds = Build.scoped
+    
+    if params[ :sdk ]
+      @builds = @builds.where( :sdk => params[ :sdk ] )
+    end
+
+    if params[ :version ]
+      @builds = @builds.where( :version => params[ :version ] )
+    end
+    
     respond_with @builds
   end
-
-  def show
-    @builds = Build.where( :sdk => params[ :id ] )
-    respond_with @builds
-  end
-
 end

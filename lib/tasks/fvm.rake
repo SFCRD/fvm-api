@@ -22,4 +22,9 @@ namespace :fvm do
 
   end
   
+  desc "Delete all"
+  task :delete => :environment do
+    Build.delete_all
+  end
+  
 end
