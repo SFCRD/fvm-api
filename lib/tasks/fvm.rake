@@ -1,6 +1,14 @@
 require 'yaml'
+require 'rdiscount'
 
 namespace :fvm do
+  
+  desc "Generates pages/index.html from README.md"
+  task :index do
+    File.open( Rails.root.join( 'app', 'views', 'pages', 'index.html' ), 'w' ) do |f|
+      f << RDiscount.new( IO.read( Rails.root.join( 'README.md' ) ) ).to_html
+    end
+  end
   
   desc "Deletes all build models"
   task :delete => :environment do
