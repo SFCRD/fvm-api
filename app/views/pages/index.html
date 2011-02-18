@@ -25,10 +25,19 @@ from the SDK homepage. This means that you can find accurate information about F
 
 <p>The full collection of builds can be retrieved at the endpoint:</p>
 
-<p><code>GET /builds.(json|xml)</code></p>
+<p><code>GET /builds.(json|xml)</code> <a href="http://fvm.heroku.com/builds.json">Try it!</a></p>
 
-<p>This collection can currently be filtered by SDK name or by specific version number through query string params, like:</p>
+<p>This collection can currently be filtered by SDK name or by specific version number
+through query string params, like:</p>
 
-<p><code>GET /builds.json?sdk=(3|4|Hero)</code></p>
+<p><code>GET /builds.json?sdk=(3|4|Hero)</code> <a href="http://fvm.heroku.com/builds.json?sdk=4">Try it!</a></p>
 
-<p><code>GET /builds.json?version=4.5.0.17689</code></p>
+<p><code>GET /builds.json?version=4.5.0.17689</code> <a href="http://fvm.heroku.com/builds.json?version=4.5.0.17689">Try it!</a></p>
+
+<h2>Caveats</h2>
+
+<p>Right now, the site will serve up build information collected on 2011-02-18. This is because
+Adobe doesn't seem to be producing nightly builds of the Flex 4 SDK anymore, and the Flex Hero
+builds they are producing are only listed under <em>Adobe Flex SDK</em>, not <em>Open Source Flex SDK</em>.
+If they start releasing versions of the SDK as open-source, and I don't update the API, please
+send me a note and I can update the site.</p>
