@@ -30,10 +30,13 @@ GEM
     activesupport (3.0.4)
     arel (2.0.8)
     builder (2.1.2)
+    compass (0.10.6)
+      haml (>= 3.0.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fvm (0.0.6)
       nokogiri (~> 1.4.4)
+    haml (3.0.25)
     i18n (0.5.0)
     mail (2.2.15)
       activesupport (>= 2.3.6)
@@ -74,7 +77,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  compass (~> 0.10.6)
   fvm (~> 0.0.6)
+  haml (~> 3.0.25)
   mechanize (~> 1.0.0)
   rails (= 3.0.4)
   sqlite3
