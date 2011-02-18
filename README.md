@@ -1,6 +1,8 @@
 Flex Version Manager API
 ========================
 
+Current API Version: **1.0.0**
+
 About
 -----
 
