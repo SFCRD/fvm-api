@@ -1,7 +1,4 @@
 FvmApi::Application.routes.draw do
-  # get "builds/index"
-
-  # get "builds/show"
   
   resources :builds, :only => [ :index ]
 
