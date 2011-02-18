@@ -1,5 +1,7 @@
 FvmApi::Application.routes.draw do
   
+  root :to => "pages#index"
+
   resources :builds, :only => [ :index ]
 
   # The priority is based upon order of creation:

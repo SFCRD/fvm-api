@@ -8,6 +8,8 @@ gem 'rails', '3.0.4'
 gem 'sqlite3'
 gem 'fvm', '~> 0.0.6'
 gem 'mechanize', '~> 1.0.0'
+gem 'haml', '~> 3.0.25'
+gem 'compass', '~> 0.10.6'
 
 # Use unicorn as the web server
 # gem 'unicorn'
